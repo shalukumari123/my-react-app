@@ -12,14 +12,18 @@ Perfect for beginners who want to become confident with **React fundamentals** b
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/ppshree/react-refresher-with-project-.git
+```
+```bash
 cd react-refresher-with-project-
-
+```
 2. Install Dependencies
+```bash
 npm install
-
+```
 3. Start the Development Server
+```bash
 npm run dev
-
+```
 
 This will run the app at http://localhost:<port>
 
