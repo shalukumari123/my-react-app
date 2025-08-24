@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test-docker-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # 2. Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # 3. Install deps & run tests
+      - name: Install dependencies
+        run: npm install
+
+     # - name: Run tests
+      #  run: npm test -- --watchAll=false
+
+      # 4. Build React app
+      - name: Build React app
+        run: npm run build
+
+      
+
+      # 6. Deploy to Netlify
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+         args: deploy --dir=dist --prod --site ${{ secrets.NETLIFY_SITE_ID }}
+        env:
+         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
