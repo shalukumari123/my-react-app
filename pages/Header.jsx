@@ -15,8 +15,8 @@ const Header = ({isLoggedIn,setIsLoggedIn}) => {
       {/* Navigation */}
       <nav>
         <ul className="nav-links">
-          <li onClick={() => navigate("/todo")}>Todo App</li>
           <li onClick={() => navigate("/home")}>Home</li>
+          <li onClick={() => navigate("/todo")}>Todo App</li>
           <li onClick={() => navigate("/contact")}>Contact</li>
         </ul>
       </nav>
