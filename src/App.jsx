@@ -7,6 +7,7 @@ import Footer from "../pages/Footer";
 import Login from "../pages/Login";
 import Contact from "../pages/Contact";
 import HomePage from "../pages/HomePage";
+import AgeCalculator from "../pages/AgeCalculator";
 
 const PrivateRoute = ({ isLoggedIn, children }) => {
   return isLoggedIn ? children : <Navigate to="/" replace />;
@@ -45,6 +46,14 @@ function App() {
             element={
               <PrivateRoute isLoggedIn={isLoggedIn}>
                 <TodoApp />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/age-calculator"
+            element={
+              <PrivateRoute isLoggedIn={isLoggedIn}>
+                <AgeCalculator />
               </PrivateRoute>
             }
           />

@@ -17,6 +17,7 @@ const Header = ({isLoggedIn,setIsLoggedIn}) => {
         <ul className="nav-links">
           <li onClick={() => navigate("/home")}>Home</li>
           <li onClick={() => navigate("/todo")}>Todo App</li>
+          <li onClick={() => navigate("/age-calculator")}>Age Calculator</li>
           <li onClick={() => navigate("/contact")}>Contact</li>
         </ul>
       </nav>
