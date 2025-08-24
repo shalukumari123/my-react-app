@@ -1,0 +1,83 @@
+.home-container {
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #111827;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: white;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background: #facc15;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #fbbf24;
+}
+
+/* Features Section */
+.features {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+  padding: 2rem;
+  background: #e0f2fe;
+  border-radius: 0.8rem;
+}
+.contact a {
+  color: #2563eb;
+  font-weight: bold;
+}

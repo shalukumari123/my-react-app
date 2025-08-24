@@ -1,5 +1,65 @@
-import React from 'react'
-import './App.css'
+import React, { useState } from "react";
+import "./App.css";
+import { Route, BrowserRouter, Routes, Router, Navigate } from "react-router-dom";
+import TodoApp from "../pages/todo-app/TodoApp";
+import Header from "../pages/Header";
+import Footer from "../pages/Footer";
+import Login from "../pages/Login";
+import Contact from "../pages/Contact";
+import HomePage from "../pages/HomePage";
+
+const PrivateRoute = ({ isLoggedIn, children }) => {
+  return isLoggedIn ? children : <Navigate to="/" replace />;
+};
+
+function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log("in app : ", isLoggedIn);
+  return (
+    <>
+      <BrowserRouter>
+        <Header isLoggedIn={isLoggedIn} setIsLoggedIn = {setIsLoggedIn}/>
+        <Routes>
+          <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />}/>
+
+          {/* Protected Routes */}
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute isLoggedIn={isLoggedIn}>
+                <HomePage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <PrivateRoute isLoggedIn={isLoggedIn}>
+                <Contact />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/todo"
+            element={
+              <PrivateRoute isLoggedIn={isLoggedIn}>
+                <TodoApp />
+              </PrivateRoute>
+            }
+          />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+
+      {/* <TodoApp /> */}
+    </>
+  );
+}
+export default App;
+
 //import FunctionalComponent from '../pages/Day1.jsx';
 //import ClassComponent from '../pages/Day1';
 // import User from '../pages/Day2';
@@ -21,41 +81,94 @@ import './App.css'
 // import ParentuseCallback from '../react-hooks/Day17';
 // import Preventnnecessarychildrender from '../react-hooks/Day17';
 // import CounteruseReducer from '../react-hooks/Day18';
-import TodoApp from '../react-hooks/Day19';
+// import TodoApp from '../react-hooks/Day19';
+// import ThemeChange from './state-manage/ThemeContext';
+// import IsloginContext from './state-manage/ThemeContext';
+// import CounterSlice from './state-manage/CounterSlice';
 
-function App() {
+// function App() {
 
+//   return (
+//     <>
 
-  return (
-    <>
-    
-     {/* <FunctionalComponent /> */}
-     {/* <ClassComponent /> */}
-     {/* <User name={'Pankaj'}/> */}
-     {/* <Counter /> */}
-     {/* <Jsx /> */}
-     {/* <ConditionalUI isLogedin={true}/> */}
-     {/* <ListKeys/> */}
-     {/* <Controlled/> */}
-     {/* <Uncontrolled/> */}
-     {/* <BlogUI/> */}
-     {/* <CounterClass/> */}
-     {/* <CounterFunctional/> */}
-     {/* <CounterWithHokks/> */}
-     {/* <ToggleLikeButton/> */}
-     {/* <TimerWithCleanup/> */}
-     {/* <FocusingInputUseRef/> */}
-     {/* <CounterUsingUseRef/> */}
-     {/* <ExpensiveCalculation/> */}
-     {/* <ParentuseCallback/> */}
-     {/* <Preventnnecessarychildrender/> */}
-     {/* <CounteruseReducer/> */}
-     <TodoApp/>
-
-
-
-    </>
-  )
+{
+  /* <FunctionalComponent /> */
+}
+{
+  /* <ClassComponent /> */
+}
+{
+  /* <User name={'Pankaj'}/> */
+}
+{
+  /* <Counter /> */
+}
+{
+  /* <Jsx /> */
+}
+{
+  /* <ConditionalUI isLogedin={true}/> */
+}
+{
+  /* <ListKeys/> */
+}
+{
+  /* <Controlled/> */
+}
+{
+  /* <Uncontrolled/> */
+}
+{
+  /* <BlogUI/> */
+}
+{
+  /* <CounterClass/> */
+}
+{
+  /* <CounterFunctional/> */
+}
+{
+  /* <CounterWithHokks/> */
+}
+{
+  /* <ToggleLikeButton/> */
+}
+{
+  /* <TimerWithCleanup/> */
+}
+{
+  /* <FocusingInputUseRef/> */
+}
+{
+  /* <CounterUsingUseRef/> */
+}
+{
+  /* <ExpensiveCalculation/> */
+}
+{
+  /* <ParentuseCallback/> */
+}
+{
+  /* <Preventnnecessarychildrender/> */
+}
+{
+  /* <CounteruseReducer/> */
+}
+{
+  /* <TodoApp/> */
+}
+{
+  /* <ThemeChange/> */
+}
+{
+  /* <IsloginContext/> */
+}
+{
+  /* <CounterSlice/> */
 }
 
-export default App
+//     </>
+//   )
+// }
+
+// export default App

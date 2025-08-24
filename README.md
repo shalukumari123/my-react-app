@@ -25,7 +25,10 @@ npm install
 npm run dev
 ```
 
-This will run the app at http://localhost:<port>
+This will run the app at 
+```bash
+http://localhost:5173/
+```
 
 📂 Study Roadmap
 📕 Core React Basics (1.5 Weeks)
