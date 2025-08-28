@@ -10,7 +10,7 @@ variables:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockerhub-service-conn'   # service connection name
+    containerRegistry: 'dockerhub-service-connection'   # service connection name
     repository: '$(imageName)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
