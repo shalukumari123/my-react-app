@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  dockerRegistryServiceConnection: 'dockerhub-service-connection'   # your service connection name
+  dockerRegistryServiceConnection: 'dockerhub-service-connection'   # your service connection name dockerhub-service=connection
   imageName: 'shalukumari123/react-app'
 
 steps:
