@@ -6,7 +6,7 @@ pool:
 
 variables:
   dockerRegistryServiceConnection: 'dockerhub-service-connection'   # your service connection name
-  imageName: 'yourdockerhubusername/react-app'
+  imageName: 'shalukumari123/react-app'
 
 steps:
 - checkout: self
