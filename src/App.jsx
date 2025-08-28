@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./App.css";
 import { Route, BrowserRouter, Routes, Router, Navigate } from "react-router-dom";
 import TodoApp from "../pages/todo-app/TodoApp";
@@ -14,17 +13,15 @@ const PrivateRoute = ({ isLoggedIn, children }) => {
 };
 
 function App() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  console.log("in app : ", isLoggedIn);
+  const isLoggedIn = JSON.parse(localStorage.getItem("auth"));
+  console.log('is logged value at start : ',isLoggedIn)
   return (
-    <>
+    
       <BrowserRouter>
-        <Header isLoggedIn={isLoggedIn} setIsLoggedIn = {setIsLoggedIn}/>
+        <Header/>
         <Routes>
-          <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />}/>
+          <Route path="/" element={<Login/>}/>
 
-          {/* Protected Routes */}
           <Route
             path="/home"
             element={
@@ -63,8 +60,7 @@ function App() {
         <Footer />
       </BrowserRouter>
 
-      {/* <TodoApp /> */}
-    </>
+    
   );
 }
 export default App;

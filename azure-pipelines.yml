@@ -1,0 +1,19 @@
+trigger:
+- main   # or your branch
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: 'yourdockerhubusername/react-app'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub-service-conn'   # service connection name
+    repository: '$(imageName)'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest

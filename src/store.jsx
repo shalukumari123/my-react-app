@@ -1,7 +1,11 @@
-// store.js
-import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../src/state-manage/ReduxToolkit";
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from '../src/state-manage/rootReducer';
 
+// Configure store with rootReducer
 export const store = configureStore({
-  reducer: { counter: counterReducer },
+  reducer: rootReducer,
 });
+
+// Infer types if using TypeScript
+// export type RootState = ReturnType<typeof store.getState>
+// export type AppDispatch = typeof store.dispatch

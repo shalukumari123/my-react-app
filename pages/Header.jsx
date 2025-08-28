@@ -1,10 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
+import { useDispatch } from "react-redux";
+import { logout } from "../src/state-manage/AuthSlice";
 
-const Header = ({isLoggedIn,setIsLoggedIn}) => {
+
+
+const Header = () => {
   const navigate = useNavigate();
-  console.log('in header outside :',isLoggedIn)
+  const dispatch = useDispatch();
+  
   return (
     <header className="header">
       {/* Logo / Title */}
@@ -19,13 +24,16 @@ const Header = ({isLoggedIn,setIsLoggedIn}) => {
           <li onClick={() => navigate("/todo")}>Todo App</li>
           <li onClick={() => navigate("/age-calculator")}>Age Calculator</li>
           <li onClick={() => navigate("/contact")}>Contact</li>
+          <li onClick={() => navigate("/dashboard")}>Dashboard</li>
+
         </ul>
       </nav>
 
       {/* Login Button */}
-      <button className="login-btn" onClick={() => {navigate("/"); isLoggedIn?setIsLoggedIn(false):setIsLoggedIn(true)}}>
-        {isLoggedIn?'Logout':'Login'}
+      <button className="login-btn" onClick={() => {navigate("/"); dispatch(logout())}}>
+        Logout
       </button>
+      
     </header>
   );
 };

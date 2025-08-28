@@ -1,32 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../src/state-manage/AuthSlice";
+// import store from '../src/store'
 
-const Login = ({setIsLoggedIn}) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+const Login = () => {
+  const [username1, setUsername] = useState("");
+  const [password1, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  // Default credentials
-  const defaultUser = {
-    username: "admin",
-    password: "12345",
-  };
+  const error = useSelector((state) => state.auth.error);
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    if (username === defaultUser.username && password === defaultUser.password) {
-      setError("");
-      alert("✅ Login Successful!");
-      setIsLoggedIn(true);
-      console.log('in login value saved to true')
-
-      navigate("/home"); // redirect to home
-    } else {
-      setError("❌ Invalid username or password");
-    }
+    
+    dispatch(login({username:username1,password:password1}));
+    navigate("/home"); 
+      
   };
 
   return (
@@ -37,14 +29,14 @@ const Login = ({setIsLoggedIn}) => {
         <input
           type="text"
           placeholder="Enter Username"
-          value={username}
+          value={username1}
           onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
           type="password"
           placeholder="Enter Password"
-          value={password}
+          value={password1}
           onChange={(e) => setPassword(e.target.value)}
         />
 
