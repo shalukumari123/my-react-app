@@ -3,12 +3,12 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import TodoApp from "../pages/todo-app/TodoApp";
-import Footer from "../pages/Footer";
-import Login from "../pages/Login";
-import Contact from "../pages/Contact";
-import HomePage from "../pages/HomePage";
-import AgeCalculator from "../pages/AgeCalculator";
+import TodoApp from "../src/pages/todo-app/TodoApp";
+import Footer from "../src/pages/Footer";
+import Login from "../src/pages/Login";
+import Contact from "../src/pages/Contact";
+import HomePage from "../src/pages/HomePage";
+import AgeCalculator from "../src/pages/AgeCalculator";
 
 function RequireAuth({ children }) {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);

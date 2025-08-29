@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import { useDispatch } from "react-redux";
-import { logout } from "../src/state-manage/AuthSlice";
+import { logout } from "../state-manage/AuthSlice";
 
 
 
@@ -24,7 +24,7 @@ const Header = () => {
           <li onClick={() => navigate("/todo")}>Todo App</li>
           <li onClick={() => navigate("/age-calculator")}>Age Calculator</li>
           <li onClick={() => navigate("/contact")}>Contact</li>
-          <li onClick={() => navigate("/dashboard")}>Dashboard</li>
+          {/* <li onClick={() => navigate("/dashboard")}>Dashboard</li> */}
 
         </ul>
       </nav>

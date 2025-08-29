@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../src/state-manage/AuthSlice"; // ← adjust path if needed
+import { login } from "../state-manage/AuthSlice"; // ← adjust path if needed
 
 const Login = () => {
   const [username1, setUsername] = useState("");

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./AgeCalculator.css";
+import Header from "./Header";
 
 const AgeCalculator = () => {
   const [birthDate, setBirthDate] = useState("");
@@ -32,6 +33,9 @@ const AgeCalculator = () => {
   };
 
   return (
+    <>
+    <Header/>
+   
     <div className="age-container">
       <h1>🎂 Age Calculator</h1>
       <p>Enter your Date of Birth to calculate your exact age till today.</p>
@@ -56,6 +60,7 @@ const AgeCalculator = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

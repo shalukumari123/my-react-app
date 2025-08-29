@@ -4,10 +4,14 @@ import EditButton from "../../components/EditButton";
 import CompletedButton from "../../components/CompletedButton";
 import AddButton from "../../components/AddButton";
 import { useSelector } from 'react-redux';
+import Header from '../Header';
 
 const TodoAppUI = ({editId, setEditId, todoList, setTodoList, todoDetails, setTodoDetails}) => {
   const user=useSelector((state)=>state.auth.user)
   return (
+    <>
+    <Header/>
+    
     <div className="todo-container">
       <h1 className="todo-title">TO-DO APP:{user}</h1>
       <h2 className="todo-subtitle">Add details here</h2>
@@ -60,6 +64,7 @@ const TodoAppUI = ({editId, setEditId, todoList, setTodoList, todoDetails, setTo
         )}
       </div>
     </div>
+    </>
   )
 }
 
