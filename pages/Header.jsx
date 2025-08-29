@@ -14,7 +14,7 @@ const Header = () => {
     <header className="header">
       {/* Logo / Title */}
       <div className="logo" onClick={() => navigate("/")}>
-        🚀 My React App
+        Todo App
       </div>
 
       {/* Navigation */}
