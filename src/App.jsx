@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, BrowserRouter, Routes, Router, Navigate } from "react-router-dom";
 import TodoApp from "../pages/todo-app/TodoApp";
-import Header from "../pages/Header";
 import Footer from "../pages/Footer";
 import Login from "../pages/Login";
 import Contact from "../pages/Contact";
@@ -18,7 +17,7 @@ function App() {
   return (
     
       <BrowserRouter>
-        <Header/>
+       
         <Routes>
           <Route path="/" element={<Login/>}/>
 
